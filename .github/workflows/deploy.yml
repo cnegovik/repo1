@@ -23,6 +23,7 @@ jobs:
 
       - name: build image
         run: |
+          chmod 775 main.sh
           docker buildx build -t cnegovik/helloworld:${{ github.event.head_commit.message }} -t cnegovik/helloworld:latest .
           docker tag cnegovik/helloworld:${{ github.event.head_commit.message }} cnegovik/helloworld:latest
           docker push cnegovik/helloworld:latest

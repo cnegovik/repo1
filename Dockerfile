@@ -11,7 +11,6 @@ RUN apt-get update && \
     python &&\
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*\
-    chmod 775 /main.sh
 
 EXPOSE 80
 
