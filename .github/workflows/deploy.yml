@@ -23,7 +23,7 @@ jobs:
 
       - name: build image
         run: |
-          docker buildx build -t helloworld:${{ github.event.head_commit.message }} .
+          docker buildx build -t helloworld:${{ github.event.head_commit.message }} -t helloworld:latest .
 
   docker_run:
     runs-on: dev
