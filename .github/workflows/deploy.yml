@@ -24,8 +24,8 @@ jobs:
 
       - name: build image
         run: |
-        cd 
-        docker buildx build -t helloworld:${{ github.event.head_commit.message }} .
+          cd 
+          docker buildx build -t helloworld:${{ github.event.head_commit.message }} .
 
   docker_run:
     runs-on: dev
@@ -35,8 +35,8 @@ jobs:
     
       - name: Run docker compose
         run: |
-        cd
-        docker compose up -d
+          cd
+          docker compose up -d
       
       - name: check connectivity
         uses: lakuapik/gh-actions-http-status@v1
