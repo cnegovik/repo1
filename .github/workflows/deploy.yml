@@ -35,6 +35,7 @@ jobs:
         run: |
           cd
           docker compose up -d
+          docker system prune -af
       
       - name: check connectivity
         uses: lakuapik/gh-actions-http-status@v1
