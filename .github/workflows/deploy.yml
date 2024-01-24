@@ -41,10 +41,5 @@ jobs:
           docker compose up -d
           docker system prune -af
       
-      - name: Check the deployed service URL
-        uses: cygnetdigital/wait_for_response@v2.0.0
-        with:
-          url: 'http://dev5-lab-cos717.sjclab.exigengroup.com/'
-          responseCode: '200'
-          timeout: 2000
-          interval: 500
+      - name: Check URL
+        run: curl --fail http://localhost || exit 1
