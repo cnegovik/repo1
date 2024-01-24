@@ -23,7 +23,7 @@ jobs:
 
       - name: build image
         run: |
-          docker buildx build -t cnegovik/helloworld:${{ github.event.head_commit.message }} -t helloworld:latest .
+          docker buildx build -t cnegovik/helloworld:${{ github.event.head_commit.message }} -t cnegovik/helloworld:latest .
           docker tag cnegovik/helloworld:${{ github.event.head_commit.message }} cnegovik/helloworld:latest
           docker push cnegovik/helloworld:latest
 
