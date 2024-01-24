@@ -17,3 +17,4 @@ EXPOSE 80
 WORKDIR /www
 
 ENTRYPOINT ["/main.sh"]
+
