@@ -41,8 +41,10 @@ jobs:
           docker compose up -d
           docker system prune -af
       
-      - name: check connectivity
-        uses: lakuapik/gh-actions-http-status@v1
+      - name: Check the deployed service URL
+        uses: cygnetdigital/wait_for_response@v2.0.0
         with:
-          sites: '["http://dev5-lab-cos717.sjclab.exigengroup.com"]'
-          expected: '[301, 200]'
+          url: 'http://dev5-lab-cos717.sjclab.exigengroup.com/'
+          responseCode: '200'
+          timeout: 2000
+          interval: 500
