@@ -20,9 +20,12 @@ jobs:
     steps:
 
       - uses: actions/checkout@v3
+        path: "/home/ec2-user"
 
       - name: build image
-        run: docker buildx build -t helloworld:${{ github.event.head_commit.message }} .
+        run: |
+        cd 
+        docker buildx build -t helloworld:${{ github.event.head_commit.message }} .
 
   docker_run:
     runs-on: dev
@@ -31,7 +34,9 @@ jobs:
     steps:
     
       - name: Run docker compose
-        run: docker compose up -d
+        run: |
+        cd
+        docker compose up -d
       
       - name: check connectivity
         uses: lakuapik/gh-actions-http-status@v1
