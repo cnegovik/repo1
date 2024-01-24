@@ -44,5 +44,5 @@ jobs:
       - name: check connectivity
         uses: lakuapik/gh-actions-http-status@v1
         with:
-          sites: '["http://localhost"]'
+          sites: '["http://dev5-lab-cos717.sjclab.exigengroup.com"]'
           expected: '[301, 200]'
