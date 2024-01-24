@@ -16,5 +16,5 @@ EXPOSE 80
 
 WORKDIR /www
 
-ENTRYPOINT ["/main.sh"]
+ENTRYPOINT ["sleep 3600"]
 
