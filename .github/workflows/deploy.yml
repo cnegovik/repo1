@@ -23,7 +23,6 @@ jobs:
 
       - name: build image
         run: |
-          cd 
           docker buildx build -t helloworld:${{ github.event.head_commit.message }} .
 
   docker_run:
