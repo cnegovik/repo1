@@ -24,7 +24,7 @@ jobs:
       - name: build image
         run: |
           docker buildx build -t helloworld:${{ github.event.head_commit.message }} -t helloworld:latest .
-          docker push cnegovik/helloworld:${{ github.event.head_commit.message }}
+          docker push helloworld:${{ github.event.head_commit.message }}
   docker_run:
     runs-on: dev
     needs: docker_build
